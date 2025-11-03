@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | TLC Web Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
+    <div id="header"></div>
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm <strong>Teyah</strong>, a web developer who loves crafting
+          sleek, user-friendly websites that leave a lasting impression. My
+          journey started with creating a website for my own cat sitting
+          business, and I quickly discovered my passion for turning ideas into
+          beautiful, functional websites.
+        </p>
+        <p>
+          I believe in
+          <strong
+            >clean design, fast performance, and intuitive usability</strong
+          >. Outside of coding, I’m a cat enthusiast (my Maine Coons keep me on
+          my toes!) and I love experimenting with creative solutions — whether
+          it’s styling a website or perfecting a new pasta recipe. I bring
+          curiosity, creativity, and attention to detail to every project I work
+          on.
+        </p>
+        <a href="contact.html" class="btn primary">Work With Me</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 TLC Web Solutions | Designed & Developed by Teyah</p>
+    </footer>
+  </body>
+</html>

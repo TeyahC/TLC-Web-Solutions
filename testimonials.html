@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Testimonials</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="header" href="header.html" />
+  </head>
+  <body>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
+    <div id="header"></div>
+    <section class="fade-in">
+      <div class="container">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="grid two-col">
+          <div class="testimonial-card">
+            <p>
+              “My website looks amazing — modern, fast, and easy to use. Teyah
+              is professional, creative, and so easy to work with.”
+            </p>
+            <h4>— Emma, Paws at Yours</h4>
+          </div>
+
+          <div class="testimonial-card">
+            <p>
+              “Delivered beyond expectations! I now have a website I’m proud to
+              show my clients.”
+            </p>
+            <h4>— James, Local Business Owner</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 TLC Web Solutions | Designed & Developed by Teyah</p>
+    </footer>
+  </body>
+</html>

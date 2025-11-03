@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TLC Web Solutions | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="header" href="header.html" />
+  </head>
+
+  <body>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
+    <div id="header"></div>
+    <section class="portfolio">
+      <h1>My Work</h1>
+      <div class="portfolio-grid">
+        <div class="project-card">
+          <a href="https://pawsatyours.netlify.app/" target="_blank">
+            <img src="images/pawsatyours.jpg" alt="Project 1" />
+          </a>
+
+          <div class="project-info">
+            <h2>Cat Sitting Website</h2>
+            <p>A responsive modern website built with HTML, CSS, and JS.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="images/project2.jpg" alt="Project 2" />
+          <div class="project-info">
+            <h2>TLC Web Solutions</h2>
+            <p>A sleek business website showcasing my web design services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 TLC Web Solutions | Designed & Developed by Teyah</p>
+    </footer>
+  </body>
+</html>

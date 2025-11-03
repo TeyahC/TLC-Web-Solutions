@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TLC Web Solutions | Services</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="header" href="header.html" />
+  </head>
+
+  <body>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
+    <div id="header"></div>
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+        <p>
+          Web development doesn’t have to be complicated. I make it simple,
+          sleek, and functional — exactly how it should be!
+        </p>
+
+        <div class="service-cards">
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>Custom Websites</h3>
+            <p>
+              I design and build websites tailored to you or your business —
+              responsive, modern, and easy to use. Whether it’s a cat sitting
+              site or a small business portfolio, I make it work beautifully on
+              all devices.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Website Redesigns</h3>
+            <p>
+              Got an existing website that feels outdated or messy? I’ll give it
+              a fresh, modern look while improving speed, usability, and style.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">📂</div>
+            <h3>Portfolio & Business Sites</h3>
+            <p>
+              Need to show off your work or services? I create clean,
+              professional websites that make your projects shine and keep
+              visitors engaged.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Performance & Usability</h3>
+            <p>
+              Fast, smooth, and easy to navigate. I focus on building sites that
+              don’t just look good — they feel good to use.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 TLC Web Solutions | Designed & Developed by Teyah</p>
+    </footer>
+  </body>
+</html>
