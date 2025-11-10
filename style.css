@@ -573,14 +573,19 @@ footer {
   }
 
   /* Hamburger menu */
+  .nav-links {
+    display: none;
+  }
+
+  /* Hamburger button visible on mobile */
   .hamburger {
-    display: flex;
+    display: flex;             /* make sure it’s flex */
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
     height: 20px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1001;             /* above nav */
   }
 
   .hamburger span {
