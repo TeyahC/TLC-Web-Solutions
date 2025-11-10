@@ -8,22 +8,6 @@
   </head>
   <body>
     <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const sideMenu = document.getElementById("side-menu");
-
-      menuToggle.addEventListener("click", () => {
-        menuToggle.classList.toggle("active");
-        sideMenu.classList.toggle("active");
-      });
-
-      // Optional: close the menu when a link is clicked
-      sideMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          sideMenu.classList.remove("active");
-          menuToggle.classList.remove("active");
-        });
-      });
-
       fetch("header.html")
         .then((response) => response.text())
         .then((data) => {
@@ -31,7 +15,6 @@
         })
         .catch((error) => console.error("Error loading header:", error));
     </script>
-
     <div id="header"></div>
     <section id="about" class="about">
       <div class="container">
