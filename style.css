@@ -506,63 +506,116 @@ footer {
     height: 55px;
   }
 
-  /* Hide normal nav links on mobile */
-   .nav-links {
-    display: flex; /* needed for sliding effect */
+ .nav-links {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
+    width: 75%;
     height: 100vh;
     background: rgba(0, 0, 44, 0.95);
-    backdrop-filter: blur(10px);
-    gap: 25px;
-    transition: right 0.4s ease;
+    backdrop-filter: blur(15px);
+    gap: 30px;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 50px 20px;
     z-index: 1000;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
 
-  /* Opened state */
+  /* Animate menu in with a cool slide + shape reveal */
   .nav-links.active {
     right: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: navFadeIn 0.5s forwards;
+  }
+
+  .nav-links li:nth-child(1) { animation-delay: 0.1s; }
+  .nav-links li:nth-child(2) { animation-delay: 0.2s; }
+  .nav-links li:nth-child(3) { animation-delay: 0.3s; }
+  .nav-links li:nth-child(4) { animation-delay: 0.4s; }
+  .nav-links li:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes navFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Mobile menu links */
   .nav-links li a {
-    font-size: 1.5rem;
-    color: #c4bfc4;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #004efb, #8c4df2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    transition: all 0.3s ease;
   }
 
+  .nav-links li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: width 0.3s ease;
+    z-index: -1;
+  }
+
+  .nav-links li a:hover::before {
+    width: 100%;
+  }
+
+  /* Hamburger button */
   .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 25px;
-    height: 20px;
+    width: 30px;
+    height: 25px;
     cursor: pointer;
     z-index: 1001;
+    transition: transform 0.3s ease;
   }
 
   .hamburger span {
     display: block;
     height: 3px;
     width: 100%;
-    background: #5dadfe;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #004efb, #8c4df2);
+    border-radius: 3px;
+    transition: all 0.4s ease;
   }
 
+  /* Hamburger turns into X */
   .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
+    transform: rotate(45deg) translate(5px, 5px);
   }
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
   .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
   /* === HERO === */
   .hero {
     height: 85vh;
