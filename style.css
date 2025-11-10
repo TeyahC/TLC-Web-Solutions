@@ -605,13 +605,6 @@ footer {
     transform: rotate(-45deg) translateY(-8px);
   }
 
-  /* Hide desktop nav links on mobile */
-  @media (max-width: 768px) {
-    header .nav-links {
-      display: none;
-    }
-  }
-
   /* === HERO === */
   .hero {
     height: 85vh;
