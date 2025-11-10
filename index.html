@@ -14,7 +14,7 @@
         .then((data) => {
           document.getElementById("header").innerHTML = data;
 
-          // Hamburger toggle code here AFTER header is loaded
+          // Now that header is loaded, select hamburger & nav
           const hamburger = document.getElementById("hamburger");
           const navLinks = document.getElementById("nav-links");
 
@@ -27,6 +27,7 @@
         })
         .catch((error) => console.error("Error loading header:", error));
     </script>
+
     <div id="header"></div>
     <section class="hero fade-in">
       <div class="container">
