@@ -507,97 +507,52 @@ footer {
   }
 
   /* Hide normal nav links on mobile */
-  .nav-links {
-    display: none;
-  }
-
-  /* === HAMBURGER MENU === */
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 1.8rem;
-    color: #5dadfe;
-    z-index: 1001;
-  }
-
-  /* ===== SIDE NAV FOR MOBILE ===== */
-  header nav ul {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70%;
-    background: rgba(0, 0, 44, 0.95); /* TLC dark-blue semi-transparent */
-    backdrop-filter: blur(10px); /* nice blur effect */
+   .nav-links {
+    display: flex; /* needed for sliding effect */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(0, 0, 44, 0.95);
+    backdrop-filter: blur(10px);
     gap: 25px;
     transition: right 0.4s ease;
-    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
   }
 
   /* Opened state */
-  header nav ul.active {
+  .nav-links.active {
     right: 0;
   }
 
-  /* Menu links */
-  header nav ul li a {
-    font-size: 1.2rem;
-    color: #c4bfc4; /* TLC body text color */
-    font-weight: 500;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s ease;
+  .nav-links li a {
+    font-size: 1.5rem;
+    color: #c4bfc4;
   }
 
-  header nav ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(
-      90deg,
-      #004efb,
-      #8c4df2
-    ); /* TLC gradient underline */
-    transition: width 0.3s ease;
-  }
-
-  header nav ul li a:hover::after {
-    width: 100%;
-  }
-
-  /* Hamburger menu */
-  .nav-links {
-    display: none;
-  }
-
-  /* Hamburger button visible on mobile */
   .hamburger {
-    display: flex;             /* make sure it’s flex */
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
     height: 20px;
     cursor: pointer;
-    z-index: 1001;             /* above nav */
+    z-index: 1001;
   }
 
   .hamburger span {
     display: block;
     height: 3px;
     width: 100%;
-    background: #5dadfe;       /* TLC blue so it’s visible */
+    background: #5dadfe;
     border-radius: 2px;
     transition: all 0.3s ease;
   }
 
-  /* Animate hamburger to X when active */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
   }
