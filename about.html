@@ -12,6 +12,17 @@
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header").innerHTML = data;
+
+          // Now that header is loaded, select hamburger & nav
+          const hamburger = document.getElementById("hamburger");
+          const navLinks = document.getElementById("nav-links");
+
+          if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+              hamburger.classList.toggle("active");
+              navLinks.classList.toggle("active");
+            });
+          }
         })
         .catch((error) => console.error("Error loading header:", error));
     </script>
