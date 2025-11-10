@@ -496,14 +496,6 @@ footer {
 
 /* ===== MOBILE MEDIA VERSION ===== */
 @media (max-width: 768px) {
-  /* === Adjust background for mobile === */
-
-  /* === Body tweaks === */
-  body {
-    margin-top: 60px;
-    line-height: 1.5;
-  }
-
   /* === HEADER === */
   header .container {
     justify-content: space-between;
