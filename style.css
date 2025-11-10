@@ -497,15 +497,6 @@ footer {
 /* ===== MOBILE MEDIA VERSION ===== */
 @media (max-width: 768px) {
   /* === Adjust background for mobile === */
-  body::before {
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 44, 0.85),
-        rgba(0, 78, 251, 0.7)
-      ),
-      url("background2.jpg") no-repeat center center;
-    background-size: contain;
-  }
 
   /* === Body tweaks === */
   body {
