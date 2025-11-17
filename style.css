@@ -552,6 +552,14 @@ footer {
     animation-delay: 0.5s;
   }
 
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
   @keyframes navFadeIn {
     to {
       opacity: 1;
@@ -611,6 +619,32 @@ footer {
     background: linear-gradient(90deg, #004efb, #8c4df2);
     border-radius: 3px;
     transition: all 0.4s ease;
+  }
+
+  .portfolio-grid {
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    height: 260px; /* increased height */
+    border-radius: 18px;
+  }
+
+  .project-card img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-info {
+    padding: 1rem 1.2rem;
+  }
+
+  .project-info h3 {
+    font-size: 1rem; /* smaller text */
+  }
+
+  .project-info p {
+    font-size: 0.85rem; /* smaller text */
   }
 
   /* Hamburger turns into X */
